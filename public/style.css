@@ -1,0 +1,311 @@
+:root {
+    --bg-fallback: rgb(92,205,241);
+    /* --bg-gradient: linear-gradient(246deg, rgba(92,205,241,1) 0%, rgba(117,235,215,1) 100%); */
+    --bg-gradient: linear-gradient(246deg, rgb(82, 215, 255) 0%, rgb(113, 255, 231) 100%);
+    --bg-animation: gradient ease 2s;
+    --drop-shadow: 0px 2px 5px rgba(0,0,0,0.48);
+    --pressed-drop-shadow: 0px 2px 10px rgba(0,0,0,0.48);
+    --box-drop-shadow: 0px 2px 4px 0px rgba(0,0,0,0.48);
+    --page-margin: 5%;
+    --content-width: calc(100% - var(--page-margin) * 2);
+    --contact-size: 15pt;
+}
+
+@keyframes gradient {
+    0% {
+        background-size: 400% 400%;
+    }
+    100% {
+        background-size: 100% 100%;
+    }
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body::before {
+    content: "";
+    background-color: #F8F8F8;
+    position: static;
+    width: 100%;
+    height:100%;
+    z-index: -2;
+}
+
+/*
+-------------------
+HEADER STYLES 
+-------------------
+*/
+
+header {
+    /* padding: 10px; */
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-template-areas:
+    ". . . . ."
+    ". pf title title ."
+    ". pf subtitle subtitle ."
+    ". pf . links .";
+    grid-template-columns: var(--page-margin) minmax(200px, 1fr) 8fr 4fr var(--page-margin);
+    grid-template-rows: 25px 90px 30px 80px;
+}
+
+header::before {
+    background: var(--bg-fallback);
+    background: var(--bg-gradient);
+    /* background: linear-gradient(-45deg, rgb(66, 207, 250), rgba(117,235,215,1)); */
+    animation: var(--bg-animation);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 75px;
+    position: absolute;
+    z-index: -1;
+    content: '';
+}
+
+header::after {
+    width: var(--content-width);
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 15px;
+    top:190px;
+    left: var(--page-margin);
+    z-index: -1;
+}
+
+header picture {
+    grid-area: pf;
+    padding: 0px;
+    height: 100%;
+    width: auto;
+    
+}
+
+header h1 {
+    grid-area: title;
+    font-size: 54pt;
+    text-shadow: var(--drop-shadow);
+    padding-left: 10px;
+    margin:0px;
+}
+
+.subtitle {
+    grid-area: subtitle;
+    /* font-weight: 600; */
+    font-size: 23pt;
+    padding-left: 10px;
+}
+
+.contact-container {
+    grid-area: links;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.contact-container a {
+    background: var(--bg-gradient);
+    animation: var(--bg-animation);
+    padding: 15px;
+    margin-right: 10px;
+    font-size: var(--contact-size);
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    box-shadow: var(--drop-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    transition: 90ms;
+}
+
+.contact-container a:hover {
+    box-shadow: var(--pressed-drop-shadow);
+    filter: brightness(110%);
+   
+}
+
+.contact-container a img {
+    width: var(--contact-size);
+    padding: 5px;
+}
+header picture img {
+    /* clip-path: circle(45%); */
+    filter: drop-shadow(var(--drop-shadow));
+    max-width: auto;
+    max-height: 100%;
+}
+
+/*
+------------
+PROJECTS STYLES
+------------
+*/
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: var(--content-width);
+    margin-left: var(--page-margin);
+    margin-top: 40px;
+    padding-bottom: 10px;
+    gap: 20px;
+}
+
+.project-title {
+    font-weight: 600;
+    font-size: 20pt;
+    position: relative;
+    bottom: -5px;
+    text-shadow: var(--drop-shadow);
+}
+
+.project-card-inner {
+    /* width: 100%; */
+    background: white;
+    padding: 10px;
+    box-shadow: var(--box-drop-shadow);
+    min-height: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.project-tag-holder {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(80px, 100px) );
+    gap: 5px;
+}
+
+.project-tag {
+    background-color: black;
+    height: 15px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 10pt;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--drop-shadow);
+}
+
+.project-link-holder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-link-holder a {
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(4, 92, 175);
+}
+
+.project-link-holder a:hover {
+    text-decoration: underline;
+}
+
+.project-description {
+}
+
+@media screen and (max-width: 1045px) {
+    .projects {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    :root {
+        --page-margin: 2%;
+        --contact-size: 1rem;
+    }
+    header {
+        height: 255px;
+        grid-template-areas:
+        ". . . . ."
+        ". pf title title title"
+        ". pf subtitle subtitle subtitle"
+        ". pf . . ."
+        ". links links links links";
+        grid-template-columns: var(--page-margin) 200px 8fr 4fr var(--page-margin);
+        grid-template-rows: 50px 60px 30px 60px auto;
+    }
+
+    header::before {
+        background-size: 100% 50%;
+        height: 150px;
+    }
+
+    header::after {
+        width: 100%;
+        top:150px;
+        left: 0px;
+    }
+
+    header h1 {
+        font-size: 10vw;
+    }
+    
+    .subtitle {
+        font-size: 5vw;
+    }
+
+    .contact-container {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    .contact-container a {
+        padding: 10px;
+    }
+
+    .projects {
+        /* margin-top: 400px; */
+    }
+}
+
+@media screen and (max-width: 460px) {
+    :root {
+        --contact-size: 0.8rem;
+    }
+    header {
+        height: 255px;
+        grid-template-areas:
+        ". . . . ."
+        ". pf title title title"
+        ". pf subtitle subtitle subtitle"
+        ". pf . . ."
+        ". links links links links";
+        grid-template-columns: var(--page-margin) 150px 8fr 4fr var(--page-margin);
+        grid-template-rows: 50px 60px 30px 60px auto;
+    }
+
+    header h1 {
+        font-size: 8vw;
+    }
+    
+    .subtitle {
+        font-size: 4vw;
+    }
+}

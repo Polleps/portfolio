@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="index, follow" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is the portfolio website of Polle Pas. It shows a list of projects I work on and has information on how to contact me.">
+    <title>Polle Pas | Software Developer</title>
+    <link rel="stylesheet" href="style.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <picture>
+            <source srcset="/img/pollepas_round.webp" type="image/webp" alt="portrait of Polle Pas" />
+            <img src="/img/pollepas_round.png" alt="portrait of Polle Pas" />
+        </picture>
+        <h1>Polle Pas</h1>
+        <span class="subtitle">Software Developer</span>
+        <div class="contact-container">
+            <a href="https://github.com/polleps"><img src="./img/github.svg" alt="the Github icon"/>Github</a>
+            <a href="https://www.linkedin.com/in/polle-pas-a60647183/"><img src="./img/linkedin.svg" alt="the LinkedIn icon"/>LinkedIn</a>
+            <a href="mailto:polleps@gmail.com"><img src="./img/email.svg" alt="an eMail icon"/>Mail</a>
+        </div>
+    </header>
+    <section class="projects">
+        <div class="project-card-outer">
+            <span class="project-title">Turnipinator</span>
+            <div class="project-card-inner">
+                <div class="content-link-sep-container">
+                    <picture class="project-image">
+                        <source srcset="/img/projects/turnipinator.webp" alt="Screenshot of the Turnipinator bot" />
+                        <img src="/img/projects/turnipinator.png" alt="Screenshot of the Turnipinator bot" />
+                    </picture>
+                    <div class="project-tag-holder">
+                        <span class="project-tag">Javascript</span>
+                        <span class="project-tag">Typescript</span>
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">Discord</span>
+                    </div>
+                    <p class="project-description">
+                        Turnipinator is a discord bot made for the <a href="https://pgksmash.nl">Dutch Super Smash Brothers Discord.</a>
+    It handles user role requests via a web interface and streams Youtube audio to voice channels.<br />
+    The bot also provides a quick and easy way for tournament organizers to add their Smash tournaments to the Tournament agenda channel.
+                    </p>
+                </div>
+                <span class="project-link-holder">
+                    <a href="https://github.com/Polleps/PGKTurnipinator" class="project-link">Check out on Github</a>
+                </span>
+            </div>
+        </div>
+        <div class="project-card-outer">
+            <span class="project-title">Dutch Smash Agenda</span>
+            <div class="project-card-inner">
+                <div class="content-link-sep-container">
+                    <picture class="project-image">
+                        <source srcset="/img/projects/agenda.webp" alt="Screenshot of the Dutch Smash Agenda" />
+                        <img src="/img/projects/agenda.png" alt="Screenshot of the Dutch Smash Agenda" />
+                    </picture>
+                    <div class="project-tag-holder">
+                        <span class="project-tag">Javascript</span>
+                        <span class="project-tag">PWA</span>
+                        <span class="project-tag">Lit-HTML</span>
+                    </div>
+                    <p class="project-description">
+                        The Dutch Smash Agenda is a progressive web app that features a live list of up-and-coming Super Smash Brothers tournaments in the Netherlands.
+    This agenda is the main source competitors use to find locals and national tournaments. Being a part of the Dutch Smash Discord, Tournament organizers can add their own tournaments via a web portal. The agenda also features live updating information like the amount of sign ups. 
+                    </p>
+                </div>
+                <span class="project-link-holder">
+                    <a href="https://github.com/Polleps/PGKTurnipinator/tree/master/agenda" class="project-link">Check out on Github</a>
+                    <a href="https://pgksmash.nl/agenda">Visit website</a>
+                </span>
+            </div>
+        </div>
+        <div class="project-card-outer">
+            <span class="project-title">DYPC! App</span>
+            <div class="project-card-inner">
+                <div class="content-link-sep-container">
+                    <picture class="project-image">
+                        <source srcset="/img/projects/dypc.webp" alt="Screenshot of the Disconnect Your Procontroller! App" />
+                        <img src="/img/projects/dypc.png" alt="Screenshot of the Disconnect Your Procontroller! App" />
+                    </picture>
+                    <div class="project-tag-holder">
+                        <span class="project-tag">Kotlin</span>
+                        <span class="project-tag">Android</span>
+                        <span class="project-tag">Bluetooth</span>
+                    </div>
+                    <p class="project-description">
+                        Disconnect Your Procontroller! is a free app for Android that aims to fix a major problem at Super Smash Brothers Tournaments: The Procontroller.
+    Procontrollers often cause issues during tournaments because they reconnect with a previously connected setup when any of its buttons are pressed. This app fixes the issue by letting the user connect their controller to their phone so it doesn’t connect to any of the tournament setups.
+                    </p>
+                </div>
+                <span class="project-link-holder">
+                    <a href="https://play.google.com/store/apps/details?id=nl.pollepas.customdrumpads&hl=nl&gl=US" class="project-link">Check out on the Google Playstore</a>
+                </span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
